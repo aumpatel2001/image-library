@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'home_page.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -123,8 +124,9 @@ class _LoginPageState extends State<LoginPage> {
                   // Register Option
                   TextButton(
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Redirecting to Register...")),
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const RegisterPage()),
                       );
                     },
                     child: const Text(
@@ -140,4 +142,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-}
+} 
